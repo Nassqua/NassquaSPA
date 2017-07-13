@@ -8,8 +8,15 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
+import { LogoComponent } from './logo/logo.component';
+
+
 import { HomeComponent } from './home/home.component';
+import { InfoBannerComponent } from './infobanner/infobanner.component';
+import { VideoCoverComponent } from './videocover/videocover.component';
+
 import { FooterComponent } from './footer/footer.component';
+
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { routes } from './app.routes'
 
@@ -18,7 +25,10 @@ import { routes } from './app.routes'
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    InfoBannerComponent,
+    VideoCoverComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

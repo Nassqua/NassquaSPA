@@ -1,0 +1,36 @@
+.videoCoverComponent{
+  width: 100%;
+  height: 60vh;
+  width: 100%;
+  top:0px;
+  left:0px;
+  position: absolute;
+  z-index: -100;
+}
+
+.background-wrap{
+  position: absolute;
+  z-index: -1000;
+  width:100%;
+  height: 60vh;
+  overflow: hidden;
+  top:0px;
+  left: 0px;
+}
+
+.video-cover{
+  position: absolute;
+  left: 0px;
+  top:0px;
+  height: 60vh;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+#video-bg-elem{
+  position: absolute;
+  top:0px;
+  left:0px;
+  min-height: 60vh;
+  min-width: 100%;
+}

@@ -1,0 +1,14 @@
+#infobannerComponent{
+  height: 60vh;
+}
+
+#bannerInfo{
+  height: 60vh;
+  z-index: 100;
+}
+
+.bannerInfoText{
+  font-size: 24px;
+  font-weight: bold;
+  color:white;
+}
