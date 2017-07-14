@@ -10,10 +10,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 
-
 import { HomeComponent } from './home/home.component';
 import { InfoBannerComponent } from './infobanner/infobanner.component';
 import { VideoCoverComponent } from './videocover/videocover.component';
+import { IactBannerComponent } from './iactbanner/iactbanner.component';
+import { IconActivityComponent } from './iconactivity/iconactivity.component';
 
 import { FooterComponent } from './footer/footer.component';
 
@@ -28,7 +29,9 @@ import { routes } from './app.routes'
     FooterComponent,
     InfoBannerComponent,
     VideoCoverComponent,
-    LogoComponent
+    LogoComponent,
+    IactBannerComponent,
+    IconActivityComponent
   ],
   imports: [
     BrowserModule,
