@@ -1,6 +1,6 @@
-<section id="infobannerComponent">
-  <videocover-component></videocover-component>
-  <div id="bannerInfo" class="valign-wrapper">
+<section id="infobannerComponent" [ngStyle]="{'height': videoHeight }" >
+  <videocover-component [videoHeight]=[videoHeight] [iconVideo]='iconVideo'></videocover-component>
+  <div id="bannerInfo" class="valign-wrapper" [ngStyle]="{'height': videoHeight }">
     <div class="container-fluid">
       <div class="row">
         <div class="col s12 l7 left-align">

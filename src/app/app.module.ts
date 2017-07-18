@@ -7,16 +7,20 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
-import { HeaderComponent } from './header/header.component';
-import { LogoComponent } from './logo/logo.component';
+import { HeaderComponent } from './utilities/header/header.component';
+import { LogoComponent } from './utilities/logo/logo.component';
 
-import { HomeComponent } from './home/home.component';
-import { InfoBannerComponent } from './infobanner/infobanner.component';
-import { VideoCoverComponent } from './videocover/videocover.component';
-import { IactBannerComponent } from './iactbanner/iactbanner.component';
-import { IconActivityComponent } from './iconactivity/iconactivity.component';
+import { HomeComponent } from './paths/home/home.component';
+import { InfoBannerComponent } from './utilities/infobanner/infobanner.component';
+import { VideoCoverComponent } from './utilities/videocover/videocover.component';
+import { IactBannerComponent } from './utilities/iactbanner/iactbanner.component';
+import { IconActivityComponent } from './utilities/iconactivity/iconactivity.component';
 
-import { FooterComponent } from './footer/footer.component';
+import { ExperiencesComponent } from './paths/experiences/experiences.component';
+import { TitleComponent } from './utilities/title/title.component';
+
+
+import { FooterComponent } from './utilities/footer/footer.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { routes } from './app.routes'
@@ -31,7 +35,9 @@ import { routes } from './app.routes'
     VideoCoverComponent,
     LogoComponent,
     IactBannerComponent,
-    IconActivityComponent
+    IconActivityComponent,
+    ExperiencesComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

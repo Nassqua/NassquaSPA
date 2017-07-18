@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { InfoBannerComponent } from '../infobanner/infobanner.component';
-import { IactBannerComponent } from '../iactbanner/iactbanner.component';
+import { InfoBannerComponent } from '../../utilities/infobanner/infobanner.component';
+import { IactBannerComponent } from '../../utilities/iactbanner/iactbanner.component';
 
 @Component({
   selector : 'home-component',
@@ -11,4 +11,5 @@ import { IactBannerComponent } from '../iactbanner/iactbanner.component';
 
 export class HomeComponent{
   title = 'Home component';
+  isPath = false;
 }

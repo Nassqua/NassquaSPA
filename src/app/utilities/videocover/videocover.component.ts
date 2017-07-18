@@ -1,4 +1,4 @@
-  import { Component  } from '@angular/core';
+import { Component , Input  } from '@angular/core';
 
 @Component({
   selector: 'videocover-component',
@@ -7,6 +7,12 @@
 })
 
 export class VideoCoverComponent{
+
+  @Input()
+  iconVideo = '';
+
+  @Input()
+  videoHeight = '10vh';
 
   constructor(){
 

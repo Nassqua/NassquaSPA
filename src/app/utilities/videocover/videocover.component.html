@@ -1,0 +1,11 @@
+<section class="videoCoverComponent" [ngStyle]="{'height': videoHeight }" >
+  <div class="background-wrap" [ngStyle]="{'height': videoHeight }">
+      <video preload="auto" autoplay="true" loop="loop" muted="muted" id="video-bg-elem" [ngStyle]="{'min-height': videoHeight }">
+        <source [src]="iconVideo" type="video/mp4">
+          Video not supported
+      </video>
+  </div>
+  <div class="video-cover" [ngStyle]="{'height': videoHeight }">
+    {{videocoverHeight}}
+  </div>
+</section>

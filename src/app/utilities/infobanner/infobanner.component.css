@@ -1,9 +1,4 @@
-#infobannerComponent{
-  height: 60vh;
-}
-
 #bannerInfo{
-  height: 60vh;
   z-index: 100;
 }
 

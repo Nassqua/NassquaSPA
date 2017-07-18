@@ -9,6 +9,8 @@ import { VideoCoverComponent } from '../videocover/videocover.component';
 })
 
 export class InfoBannerComponent{
-  bannerInfo = 'Live real natural and cultural experiences !!'
+  iconVideo = 'assets/videos/infobanner2.mp4';
+  bannerInfo = 'Live real natural and cultural experiences !!';
   logoFontSize = '12px';
+  videoHeight = '40vh';
 }
