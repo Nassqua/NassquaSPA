@@ -29,6 +29,8 @@ import { FooterComponent } from './utilities/footer/footer.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { routes } from './app.routes'
 
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { routes } from './app.routes'
     HttpModule,
     routes,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Angular2FontawesomeModule 
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

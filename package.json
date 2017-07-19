@@ -21,15 +21,15 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-fontawesome": "^0.9.1",
     "core-js": "^2.4.1",
+    "font-awesome": "~4.7.0",
     "hammer": "0.0.5",
     "jquery": "2.1.1",
     "materialize-css": "^0.99.0",
     "ngx-pagination": "^3.0.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
-    "font-awesome": "~4.7.0",
-    "angular2-fontawesome": "~0.9.0"
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@angular/cli": "1.2.0",

@@ -7,8 +7,21 @@
 }
 
 .btn-login{
-
-  width: 100%;
+  width: 90%;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.fb-btn{
+  background-color: #3b5999;
+}
+
+.iconLogin{
+  margin-right: 20px;
+}
+
+.container-login{
+  padding: 10px;
+  margin-bottom: 70px;
 }
