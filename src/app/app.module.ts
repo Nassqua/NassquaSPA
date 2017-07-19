@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+
+
 import { HttpModule } from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
@@ -19,11 +22,13 @@ import { IconActivityComponent } from './utilities/iconactivity/iconactivity.com
 import { ExperiencesComponent } from './paths/experiences/experiences.component';
 import { TitleComponent } from './utilities/title/title.component';
 
+import { LoginComponent } from './paths/login/login.component';
 
 import { FooterComponent } from './utilities/footer/footer.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { routes } from './app.routes'
+
 
 @NgModule({
   declarations: [
@@ -37,14 +42,16 @@ import { routes } from './app.routes'
     IactBannerComponent,
     IconActivityComponent,
     ExperiencesComponent,
-    TitleComponent
+    TitleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     HttpModule,
     routes,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

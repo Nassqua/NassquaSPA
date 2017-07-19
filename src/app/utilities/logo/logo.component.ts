@@ -16,6 +16,12 @@ export class LogoComponent{
   @Input()
   logoFontSize = '10px';
 
+  @Input()
+  logoMainTextColor = 'white';
+
+  @Input()
+  logoSecondTextColor = '#00E676';
+
   constructor(){
 
 

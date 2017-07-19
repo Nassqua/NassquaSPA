@@ -1,3 +1,4 @@
+;
 h1{
   color:red;
 }
@@ -11,5 +12,35 @@ h1{
 }
 
 .imgCard{
-  min-height: 500%;
+
+  background: no-repeat center;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+
+}
+
+.imgCardExperiences{
+  min-height: 250px;
+}
+
+.card-title{
+    color: #484848 !important;
+    margin: 0px !important;
+    font-size: 15px;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    display: inline !important;
+}
+
+.card-content{
+  padding: 2px;
+}
+
+.card-price{
+  font-weight: bold;
+  font-size: 12px;
 }

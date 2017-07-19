@@ -13,3 +13,8 @@ body {
  main {
    flex: 1 0 auto;
  }
+
+
+ .ngx-pagination .current{
+   background-color: #00e676 !important;
+ }

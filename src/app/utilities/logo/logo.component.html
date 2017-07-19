@@ -1,3 +1,3 @@
-<section id="logoComponent" [ngStyle]="{'font-size': logoFontSize }">
-  <span>{{t1}}</span><span class="green-text text-accent-3">{{t2}}</span><span>{{t3}}</span>
+<section id="logoComponent" [ngStyle]="{'font-size': logoFontSize}">
+  <span [ngStyle]="{'color':logoMainTextColor}">{{t1}}</span><span [ngStyle]="{'color':logoSecondTextColor}">{{t2}}</span><span [ngStyle]="{'color':logoMainTextColor}">{{t3}}</span>
 </section>

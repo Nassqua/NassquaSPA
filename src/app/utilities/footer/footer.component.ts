@@ -10,4 +10,5 @@ import { LogoComponent } from '../logo/logo.component';
 
 export class FooterComponent{
   title = 'Footer component';
+  logoFontSize = '';
 }

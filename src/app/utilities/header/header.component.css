@@ -1,5 +1,5 @@
 nav{
-  background-color: rgba(0,0,0,0.2);
+
 }
 
 #titleLogo{
@@ -12,4 +12,12 @@ nav{
   left: 0px;
   top: 0px;
   z-index: 1000;
+}
+
+.backTransparent{
+  background-color: rgba(0,0,0,0.0);
+  box-shadow : none;
+}
+.backFill{
+    background-color: rgba(0,0,0,0.7);
 }
