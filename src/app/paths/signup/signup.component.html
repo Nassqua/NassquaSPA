@@ -1,0 +1,111 @@
+<!--SignUpComponent-->
+<section id="signupComponent">
+  <div *ngIf='isPath'>
+    <videocover-component [videoHeight]='videoHeight' [iconVideo]='iconVideo'></videocover-component>
+    <title-component [titleMarginTop]='titleMarginTop' [title]='title'  [titleHeight]='videoHeight' [titleFontSize]='titleFontSize' ></title-component>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 center-align">
+        <div class="lblTitle1">{{lblTitle1}}</div>
+        <logo-component [logoFontSize]="logoFontSize" [logoMainTextColor]='logoMainTextColor'></logo-component>
+        <div class="lblTitle2">{{lblTitle2}}</div>
+      </div>
+    </div>
+    <div class="container container-login">
+
+      <div class="row">
+        <div class="col s12 l6">
+          <div class="row">
+            <div class="col s12 center-align">
+              <a class="fb-btn waves-effect waves-light btn btn-login"><i class="fa fa-facebook left" aria-hidden="true"></i>Sign up with Facebook</a>
+            </div>
+            <div class="col s12 center-align">
+              <a class="waves-effect waves-light grey lighten-4 grey-text text-darken-4 btn btn-login"><i class="fa fa-google left" aria-hidden="true"></i>Sign up with Google</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 l6">
+            <div class="row">
+              <div class="col s12 center-align">
+                Or
+              </div>
+            </div>
+            <div class="row">
+              <form class="col s12 signup-form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix iconLogin">
+                      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </i>
+                    <input id="email" type="email" class="validate" formControlName="email">
+                    <label for="email" data-error="wrong" data-success="right" >Email</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix iconLogin">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </i>
+
+                    <input id="firstName" type="text" class="validate" formControlName="firstName">
+                    <label for="icon_prefix" data-error="wrong" data-success="right">First name</label>
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix iconLogin">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </i>
+
+                    <input id="lastName" type="text" class="validate" formControlName="lastName">
+                    <label for="icon_prefix" data-error="wrong" data-success="right">Last name</label>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix iconLogin">
+                      <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </i>
+
+                    <input id="createPassword" type="password" class="validate" formControlName="createPassword">
+                    <label for="password" data-error="wrong" data-success="right">Create Password</label>
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix iconLogin">
+                      <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </i>
+
+                    <input id="confirmPassword" type="password" class="validate" formControlName="confirmPassword">
+                    <label for="password" data-error="wrong" data-success="right">Confirm password</label>
+
+
+                  </div>
+                </div>
+
+                <div class="row center-align">
+                    <button class="btn waves-effect waves-light btn-nassqua" type="submit" name="action" [disabled]="!form.valid" value="submit">Sign up
+                        <i class="fa fa-user-plus left" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+               </form>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/SignUpComponent-->

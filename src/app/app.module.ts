@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
 
-import { HttpModule } from '@angular/http';
+import { HttpModule  } from '@angular/http';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule , AbstractControl} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -24,12 +25,15 @@ import { TitleComponent } from './utilities/title/title.component';
 
 import { LoginComponent } from './paths/login/login.component';
 
+import { SignUpComponent } from './paths/signup/signup.component';
+
 import { FooterComponent } from './utilities/footer/footer.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { routes } from './app.routes'
 
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+
 
 
 @NgModule({
@@ -45,7 +49,8 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     IconActivityComponent,
     ExperiencesComponent,
     TitleComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -53,8 +58,9 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     HttpModule,
     routes,
     FormsModule,
+    ReactiveFormsModule,
     NgxPaginationModule,
-    Angular2FontawesomeModule 
+    Angular2FontawesomeModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

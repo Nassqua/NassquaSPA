@@ -22,7 +22,7 @@ export class HeaderComponent{
 
   checkScrollPage(){
     let number = this.document.body.scrollTop;
-    if (number <= 70) {
+    if (number <= 3) {
 
       document.getElementById('navHeader').classList.remove('backFill');
       document.getElementById('navHeader').classList.add('backTransparent');

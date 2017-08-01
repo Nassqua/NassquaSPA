@@ -14,7 +14,7 @@ body {
    flex: 1 0 auto;
  }
 
- 
+
 
  .ngx-pagination .current{
    background-color: #00e676 !important;
@@ -23,9 +23,14 @@ body {
  .btn-nassqua{
    background-color:#00e676 ;
    width: 80%;
+   margin-top: 10px;
  }
 
  .btn-nassqua:hover{
+   background-color: #01d66e;
+ }
+
+ .btn-nassqua:active{
    background-color: #01d66e;
  }
 
@@ -44,13 +49,13 @@ body {
    }
    /* valid color */
    .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
+     border-bottom: 1px solid #2D2D2D;
+     box-shadow: 0 1px 0 0 #2D2D2D;
    }
    /* invalid color */
    .input-field input[type=text].invalid {
      border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
+     box-shadow: 0 1px 0 0 #2D2D2D;
    }
    /* icon prefix focus color */
    .input-field .prefix.active {
