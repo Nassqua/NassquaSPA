@@ -1,0 +1,11 @@
+.errorTitle{
+  color : red;
+  padding: 10px;
+  border : solid 1px red;
+  border-radius: 6px;
+  width: 100%;
+}
+
+#errorLabelComponent{
+  padding: 5px;
+}

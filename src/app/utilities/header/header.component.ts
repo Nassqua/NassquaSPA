@@ -1,7 +1,7 @@
 import { Component , HostListener , Inject } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import { DOCUMENT } from '@angular/platform-browser';
-
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector : 'header-component',
@@ -15,8 +15,16 @@ export class HeaderComponent{
   title = 'NASSQUA';
   logoFontSize = '28px';
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  userEmail;
 
+  constructor(@Inject(DOCUMENT) private document: Document , private authService : AuthService) {
+
+      this.userEmail = this.authService.userEmail.subscribe( data => {
+        this.userEmail = data;
+
+        alert(this.userEmail);
+
+      });
 
   }
 

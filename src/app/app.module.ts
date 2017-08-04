@@ -9,6 +9,10 @@ import {RouterModule} from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule , AbstractControl} from '@angular/forms';
 
+import { LoadingComponent } from './utilities/loading/loading.component';
+
+import { ErrorLabelComponent } from './utilities/errorlabel/errorlabel.component';
+
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './utilities/header/header.component';
@@ -34,6 +38,9 @@ import { routes } from './app.routes'
 
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth-service';
+
 
 
 @NgModule({
@@ -50,7 +57,9 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     ExperiencesComponent,
     TitleComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoadingComponent,
+    ErrorLabelComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +71,7 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     NgxPaginationModule,
     Angular2FontawesomeModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy} , AuthGuard , AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

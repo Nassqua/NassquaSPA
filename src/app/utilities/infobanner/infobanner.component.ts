@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VideoCoverComponent } from '../videocover/videocover.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector : 'infobanner-component',
@@ -9,9 +10,20 @@ import { VideoCoverComponent } from '../videocover/videocover.component';
 })
 
 export class InfoBannerComponent{
-  iconVideo = 'assets/videos/infobanner2.mp4';
-  bannerInfo = 'Live real natural and cultural experiences !!';
-  logoFontSize = '24px';
+  iconVideo = 'assets/videos/infobanner5.mp4';
+  bannerInfo = 'Live natural and real cultural experiences.';
+  logoFontSize = '60px';
   videoHeight = '40vh';
   infoBannerTop = '60px';
+
+  btnTitle = 'Start now !!';
+
+  constructor(private _router : Router){
+
+  }
+
+  signup(){
+    this._router.navigate(['signup']);
+  }
+
 }

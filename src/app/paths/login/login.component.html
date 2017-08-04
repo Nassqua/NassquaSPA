@@ -1,5 +1,6 @@
 <!--LoginComponent-->
 <section id="loginComponent">
+  <loading-component [isVisible]="loading" ></loading-component>
   <div *ngIf='isPath'>
     <videocover-component [videoHeight]='videoHeight' [iconVideo]='iconVideo'></videocover-component>
     <title-component [titleMarginTop]='titleMarginTop' [title]='title'  [titleHeight]='videoHeight' [titleFontSize]='titleFontSize' ></title-component>
@@ -60,6 +61,11 @@
                       <i class="fa fa-sign-in left" aria-hidden="true"></i>
                   </button>
                 </div>
+
+                <div class="row center-align">
+                  <errorlabel-component [title]="errorTitle" [errorVisible]="errorVisible"></errorlabel-component>
+                </div>
+
                </form>
             </div>
 

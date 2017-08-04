@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
 import {FormGroup , FormControl , Validators , AbstractControl } from '@angular/forms'
+
 import { Authservice } from '../../services/authservice';
+import { AuthService } from '../../services/auth-service';
+
 import { Router } from '@angular/router';
 
+import { Users } from '../../models/users.model';
+
+import { LoadingComponent } from '../../utilities/loading/loading.component';
+
+import { ErrorLabelComponent } from '../../utilities/errorlabel/errorlabel.component';
 
 @Component({
   selector : 'login-component',
   templateUrl : './login.component.html',
   styleUrls : [ './login.component.css' ],
-  providers : [ Authservice ]
+  providers : [ Authservice ,  AuthService],
+  entryComponents : [ LoadingComponent ,  ErrorLabelComponent]
 })
 
 export class LoginComponent{
@@ -26,42 +35,62 @@ export class LoginComponent{
 
   form;
 
-  localUser = {
-    email : '',
-    password : ''
+  localUser:Users = new Users();
+
+  loading:Boolean = false;
+
+  error = '';
+
+  errorTitle = "";
+  errorVisible = false;
+
+  constructor(private _service:Authservice ,private _service2:AuthService ,  private _router : Router){
+
   }
 
-  constructor(private _service:Authservice , private _router : Router){
+  login(email){
 
-  }
+      this.loading = true;
 
-  login(){
-    this._service.loginFn(this.localUser)
+      this._service2.login(this.localUser)
+        .subscribe( result => {
+          console.log(result);
+          if(result === true)
+          {
+            this._router.navigate(['experiences']);
+            this.errorVisible = false;
 
-    .then( (res) => {
-        if(res){
-            this._router.navigate(['experiences'])
-        }
-        else{
-          console.log(res);
-        }
-    })
+            this._service2.userEmail.next(email);
 
-    .catch(e => {
+          }
+          else{
 
-      console.log("reject: " + e.message);
+            this.error = 'Credenciales incorrectas';
+            this.loading = true;
+          }
+        }, e => {
 
-    });
+            this.error = 'Credenciales incorrectas';
+            console.log("reject: " + e.message);
 
+            this.errorTitle = 'Check your email and password';
+            this.errorVisible = true;
+
+
+            this.loading = false;
+        })
 
   }
 
   ngOnInit(){
 
+
     this.form = new FormGroup({
       email : new FormControl("" , Validators.required),
       password : new FormControl("" , Validators.required)
     });
+
+    this._service2.logout();
 
   }
 
@@ -72,8 +101,7 @@ export class LoginComponent{
     this.localUser.email = user.email;
     this.localUser.password = user.password;
 
-
-    this.login();
+    this.login(this.localUser.email);
 
   }
 

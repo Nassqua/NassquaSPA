@@ -1,7 +1,7 @@
 export class Experiences{
-  ExperiencesId : number;
-  Name : string;
+  experiencesId : number;
+  name : string;
   Description : string;
-  Image : string;
-  Price : number;
+  image : string;
+  price : number;
 }

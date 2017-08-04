@@ -20,20 +20,20 @@
               <div class="imgCardExperiences">
 
                 <!--<img class="activator imgCard" src="assets/images/raq1.jpg">-->
-                <div class="activator imgCard" [ngStyle]="{'background-image' : 'url(' + Experience.Image +')' , 'height' : backImageHeight , 'width' : backImageWidth}">
+                <div class="activator imgCard" [ngStyle]="{'background-image' : 'url(' + Experience.image +')' , 'height' : backImageHeight , 'width' : backImageWidth}">
 
                 </div>
 
               </div>
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">{{Experience.Name}}<i class="fa fa-bars right" aria-hidden="true"></i></span>
+              <span class="card-title activator grey-text text-darken-4">{{Experience.name}}<i class="fa fa-bars right" aria-hidden="true"></i></span>
               <br/>
-              <span class="card-title card-price activator grey-text text-darken-4">{{Experience.Price | currency:'COP':true:'1.2-2'}}</span>
+              <span class="card-title card-price activator grey-text text-darken-4">{{Experience.price | currency:'COP':true:'1.2-2'}}</span>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Card Title<i class="fa fa-times right" aria-hidden="true"></i></span>
-              <p>{{Experience.Description}}</p>
+              <p>{{Experience.description}}</p>
             </div>
           </div>
 

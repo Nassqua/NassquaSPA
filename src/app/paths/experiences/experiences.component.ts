@@ -1,10 +1,13 @@
 import { Component , Input } from '@angular/core';
 import { Experiences } from '../../models/experiences.model';
+import { NassquaAPIServices } from '../../services/nassqua.services';
+
 
 @Component({
   selector : 'experiences-component',
   templateUrl : './experiences.component.html',
-  styleUrls : [ './experiences.component.css' ]
+  styleUrls : [ './experiences.component.css' ],
+  providers : [ NassquaAPIServices ]
 })
 
 export class ExperiencesComponent{
@@ -20,6 +23,10 @@ export class ExperiencesComponent{
   backImageHeight = '240px';
   backImageWidth = '100%';
   p: number = 1;
+
+  _Experiences : Experiences[];
+
+  /*
 
   public _Experiences: Experiences[] = [
       { 'ExperiencesId' : 1  , 'Name' : 'Raquira salvaje' ,'Description' : 'Experience1' , 'Image' : 'assets/images/raq1.jpg' , 'Price' : 250},
@@ -64,5 +71,28 @@ export class ExperiencesComponent{
       { 'ExperiencesId' : 40  , 'Name' : 'Alto Ricaurte' , 'Description' : 'Experience8' , 'Image' : 'assets/images/raq1.jpg', 'Price' : 250}
 
   ];
+  */
+º
+  constructor( private nassquaAPIServices : NassquaAPIServices ){
+
+    this.nassquaAPIServices.getExperiences()
+      .subscribe(result => {
+
+        console.log(result);
+
+        if(result)
+        {
+          this._Experiences = result.experiences;
+
+        }
+        else{
+
+        }
+
+      } , e => {
+
+      });
+
+  }
 
 }

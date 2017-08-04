@@ -6,11 +6,12 @@ import { HomeComponent } from './paths/home/home.component';
 import { ExperiencesComponent } from './paths/experiences/experiences.component';
 import { LoginComponent } from './paths/login/login.component';
 import { SignUpComponent } from './paths/signup/signup.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const Router: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'experiences', component: ExperiencesComponent },
+  { path: 'experiences', component: ExperiencesComponent , canActivate : [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent }
 ];

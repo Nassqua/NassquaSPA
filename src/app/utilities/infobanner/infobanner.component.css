@@ -7,3 +7,40 @@
   font-weight: bold;
   color:white;
 }
+
+.btn-register{
+  height: 60px;
+
+}
+
+.logoComponent1{
+  display: none;
+}
+
+.bannerInfoText{
+  margin-top: 20px;
+}
+
+@media only screen and (min-width : 600px){
+
+  .btn-register{
+      margin-top: 100px;
+  }
+
+  .bannerInfoText{
+    margin-top: 0px;
+  }
+
+
+}
+
+@media only screen and (min-width : 1200px){
+    .btn-register{
+      font-size: 25px;
+    }
+
+    .logoComponent1{
+      display: block;
+    }
+
+}
