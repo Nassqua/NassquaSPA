@@ -30,7 +30,9 @@
     "hammer": "0.0.5",
     "jquery": "2.1.1",
     "materialize-css": "^0.99.0",
+    "ng2-redux": "^5.1.2",
     "ngx-pagination": "^3.0.1",
+    "redux": "^3.7.2",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

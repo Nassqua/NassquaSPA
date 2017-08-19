@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
+import { NgRedux , NgReduxModule  } from 'ng2-redux';
 
 import { HttpModule  } from '@angular/http';
 import {RouterModule} from '@angular/router';
@@ -14,6 +15,8 @@ import { LoadingComponent } from './utilities/loading/loading.component';
 import { ErrorLabelComponent } from './utilities/errorlabel/errorlabel.component';
 
 import { AppComponent } from './app.component';
+import { IAppState , rootReducer  ,INITIAL_STATE } from './store';
+import { NassquaActions } from './actions';
 
 import { HeaderComponent } from './utilities/header/header.component';
 import { LogoComponent } from './utilities/logo/logo.component';
@@ -69,9 +72,14 @@ import { AuthService } from './services/auth-service';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    Angular2FontawesomeModule
+    Angular2FontawesomeModule,
+    NgReduxModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy} , AuthGuard , AuthService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy} , AuthGuard , AuthService , NassquaActions],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>){
+    ngRedux.configureStore(rootReducer , INITIAL_STATE);
+  }
+}

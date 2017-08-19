@@ -3,6 +3,10 @@ import { LogoComponent } from '../logo/logo.component';
 import { DOCUMENT } from '@angular/platform-browser';
 import { AuthService } from '../../services/auth-service';
 
+
+import { Observable } from 'rxjs/observable';
+import { NgRedux , select } from 'ng2-redux';
+
 @Component({
   selector : 'header-component',
   templateUrl : './header.component.html',
@@ -17,14 +21,12 @@ export class HeaderComponent{
 
   userEmail;
 
+  @select() emailUserLogged$ : Observable<string>;
+  @select() nameUser$ : Observable<string>;
+
   constructor(@Inject(DOCUMENT) private document: Document , private authService : AuthService) {
 
-      this.userEmail = this.authService.userEmail.subscribe( data => {
-        this.userEmail = data;
-
-        alert(this.userEmail);
-
-      });
+      
 
   }
 

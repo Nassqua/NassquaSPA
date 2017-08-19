@@ -3,9 +3,10 @@
   padding: 10px;
   border : solid 1px red;
   border-radius: 6px;
-  width: 100%;
+  text-align: center;
 }
 
 #errorLabelComponent{
   padding: 5px;
+  text-align: center;
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup , FormControl , Validators , AbstractControl } from '@angular/forms'
 
-import { Authservice } from '../../services/authservice';
 import { AuthService } from '../../services/auth-service';
 
 import { Router } from '@angular/router';
@@ -12,11 +11,16 @@ import { LoadingComponent } from '../../utilities/loading/loading.component';
 
 import { ErrorLabelComponent } from '../../utilities/errorlabel/errorlabel.component';
 
+import { IAppState } from '../../store';
+
+import { NgRedux } from 'ng2-redux';
+import { NassquaActions } from '../../actions';
+
 @Component({
   selector : 'login-component',
   templateUrl : './login.component.html',
   styleUrls : [ './login.component.css' ],
-  providers : [ Authservice ,  AuthService],
+  providers : [ AuthService],
   entryComponents : [ LoadingComponent ,  ErrorLabelComponent]
 })
 
@@ -44,7 +48,7 @@ export class LoginComponent{
   errorTitle = "";
   errorVisible = false;
 
-  constructor(private _service:Authservice ,private _service2:AuthService ,  private _router : Router){
+  constructor(private _service:AuthService ,  private _router : Router , private ngRedux : NgRedux<IAppState> , private nassquaActions : NassquaActions){
 
   }
 
@@ -52,15 +56,20 @@ export class LoginComponent{
 
       this.loading = true;
 
-      this._service2.login(this.localUser)
+      this._service.login(this.localUser)
         .subscribe( result => {
           console.log(result);
           if(result === true)
           {
+            //save login state
+
+            this.nassquaActions.addEmailUserLogged(email);
+            this.nassquaActions.addNameUser('heinner zapata');
+
             this._router.navigate(['experiences']);
             this.errorVisible = false;
 
-            this._service2.userEmail.next(email);
+            this._service.userEmail.next(email);
 
           }
           else{
@@ -90,7 +99,7 @@ export class LoginComponent{
       password : new FormControl("" , Validators.required)
     });
 
-    this._service2.logout();
+    this._service.logout();
 
   }
 
