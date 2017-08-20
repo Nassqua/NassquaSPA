@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http , Response , Headers , RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch'
+import 'rxjs/Rx';
+import { Config } from '../Config';
 
 
 import { Experiences } from '../models/experiences.model';
@@ -10,7 +11,7 @@ import { Experiences } from '../models/experiences.model';
 
  export class NassquaAPIServices{
 
-   private apiUrl = 'http://localhost:3000/api/'
+   private apiUrl = Config.apiProvider;
 
    constructor(private http : Http){}
 
