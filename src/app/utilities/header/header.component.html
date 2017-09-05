@@ -7,19 +7,20 @@
      </a>
      <ul class="right hide-on-med-and-down">
 
-       <li>
+       <li *ngIf="!isUserData">
          <a routerLink="/login" routerLinkActive="active"><i class="fa fa-sign-in left" aria-hidden="true"></i>LogIn</a>
        </li>
-       <li>
+       <li *ngIf="!isUserData">
          <a routerLink="/signup" routerLinkActive="active"><i class="fa fa-user-plus left" aria-hidden="true"></i>SignUp</a>
        </li>
 
        <li>
-         {{ emailUserLogged$ | async }}
+         <!--{{ emailUserLogged$ | async }}-->
        </li>
 
        <li>
-         {{ nameUser$ | async }}
+         <!--{{ nameUser$ | async }}-->
+         {{ userName }}
        </li>
 
 

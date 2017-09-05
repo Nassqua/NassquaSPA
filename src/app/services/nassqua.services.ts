@@ -29,6 +29,10 @@ import { Experiences } from '../models/experiences.model';
      return this.http.get(this.getUrl('users') , this.getOptions()).map(this.getDatos).catch(this.error);
    }
 
+   getUserData(email) : Observable<any>{
+     return this.http.get(this.getUrl('getuserdata') ,this.getOptions()).map(this.getDatos).catch(this.error);
+   }
+
    // </Users>
 
 
